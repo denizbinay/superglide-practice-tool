@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Superglide Practice Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <h1 class="logo">Superglide Practice Tool</h1>
+        <div class="config">
+            <label for="crouchKey" class="label">Crouch Key
+                <input type="text" id="crouchKey" placeholder="Crouch Key" class="input" readonly>
+            </label>
+            <label for="jumpKey" class="label">Jump Key
+                <input type="text" id="jumpKey" placeholder="Jump Key" class="input" readonly>
+            </label>
+            <label for="fps" class="label">Framerate
+                <input type="number" id="fps" placeholder="Framerate" class="input" value="60">
+            </label>
+            <label for="repetitions" class="label">Repetitions
+                <input type="number" id="repetitions" placeholder="Repetitions" class="input" value="3">
+            </label>
+        </div>
+    </header>
+    <main class="main">
+        <h2 class="message-headline" id="messageHeadline"> Welcome </h2>
+
+
+        <p class="message-instruction" id="messageInstruction">
+            Configure your jump and crouch keys and desired framerate. To
+            execute a successful Superglide, press the crouch key within 2 frames after the jump key. For more
+            information on Superglides, <a href="http://example.org/">click here</a>.
+        </p>
+
+        <button type="button" class="button" id="startButton">
+            Start Practice
+        </button>
+    </main>
+    <footer class="footer">
+        <p>Created by <a href="https://github.com/denizbinay">nedzi</a> / Based on the <a
+                href="https://github.com/AngryGroceries/Apex_Superglide_Practice_Tool">powershell version</a> by <a
+                href="https://github.com/JayTheYggdrasil">JayTheYggdrasil</a> and <a
+                href="https://github.com/AngryGroceries">AngryGroceries</a></p>
+        <a href="https://github.com/denizbinay/superglide-practice-tool">
+            <img class="github-logo" src="images/github-mark-white.png" alt="github logo">
+        </a>
+    </footer>
+    <div class="modal-container" id="modalContainer">
+        <div class="modal">
+            <h1 class="modal-headline" id="modalHeadline"></h1>
+            <p class="modal-text" id="modalText"></p>
+        </div>
+    </div>
+</body>
+
+</html>
