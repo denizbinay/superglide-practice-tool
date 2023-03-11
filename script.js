@@ -101,16 +101,20 @@ function createEvaluation(stroke) {
 
   if (frameDiffrence < 1) {
     chance = frameDiffrence * 100;
-    return `Yeah! ${chance.toFixed(2)}% chance of Succuess! Crouch slightly later by ${timeDiffrence} ms to improve`;
+    return `Yeah! ${chance.toFixed(0)}% chance of Succuess! Crouch slightly later by ${Math.abs(
+      frameLength - timeDiffrence
+    ).toFixed(0)} ms to improve`;
   }
 
   if (frameDiffrence < 2) {
     chance = (2 - frameDiffrence) * 100;
-    return `Yeah! ${chance.toFixed(2)}% chance of Succuess! Crouch slightly sooner by ${timeDiffrence} ms to improve`;
+    return `Yeah! ${chance.toFixed(0)}% chance of Succuess! Crouch slightly sooner by ${Math.abs(
+      frameLength - timeDiffrence
+    ).toFixed(0)} ms to improve`;
   }
 
   if (frameDiffrence > 2) {
-    return `Unsuccessfull! Crouch ${timeDiffrence} ms sooner to improve`;
+    return `To Late! Crouch ${Math.abs(frameLength - timeDiffrence).toFixed(0)} ms sooner`;
   }
 }
 
@@ -145,7 +149,8 @@ async function practice() {
   messageHeadline.textContent = "Results";
   messageInstruction.textContent = "";
   for (let i = 0; i < results.length; i++) {
-    messageInstruction.textContent += `Round ${i + 1}: ${createEvaluation(results[i])}\r\n`;
+    messageInstruction.textContent += `${i + 1}: ${createEvaluation(results[i])}\r\n`;
+    startButton.style.display = "block";
   }
 }
 
