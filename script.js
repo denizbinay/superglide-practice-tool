@@ -75,7 +75,12 @@ async function round() {
 
 async function countDown() {
   return new Promise(async (resolve) => {
-    messageInstruction.textContent = "Get ready for the next round.";
+    messageInstruction.textContent = `Get ready for the next round.`;
+    if (results.length > 0) {
+      messageInstruction.textContent += `\r\n\r\n Last round: ${createEvaluation(results[results.length - 1])}`;
+    }
+    messageHeadline.textContent = "3";
+    await new Promise((resolve) => setTimeout(resolve, 1000));
     messageHeadline.textContent = "2";
     await new Promise((resolve) => setTimeout(resolve, 1000));
     messageHeadline.textContent = "1";
