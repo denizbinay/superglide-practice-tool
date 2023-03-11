@@ -60,10 +60,15 @@ a {
 }
 
 .logo {
+  text-decoration: none;
   font-size: 120%;
   font-weight: 900;
   text-transform: uppercase;
   font-size: clamp(1rem, 1.5vw, 3rem);
+}
+
+.logo h1 {
+  font-size: inherit;
 }
 
 .main {
